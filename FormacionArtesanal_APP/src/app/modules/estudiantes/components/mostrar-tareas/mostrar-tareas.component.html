@@ -1,0 +1,21 @@
+<div class="contenedor">
+
+    <div class="contenido">
+
+        <div class="contenedor-titulo-h1">
+            <h1 class="h1-titulo"> {{cursoIndividual.materia}} </h1>
+        </div>
+
+        <div class="tareas" *ngFor="let tarea of tareas">
+            <a *ngIf="tarea.tipo === 'Tarea'" [routerLink]="['/estudiante/curso', tarea.curso_formado_id, 'tarea', tarea.id]"> <i class="fa-solid fa-file-pen"></i> {{tarea.nombre}} </a>
+            <a *ngIf="tarea.tipo === 'Examen'" [routerLink]="['/estudiante/curso', tarea.curso_formado_id, 'tarea', tarea.id]"> <i class="fa-solid fa-file-lines"></i> {{tarea.nombre}} </a>
+            <a *ngIf="tarea.tipo === 'Examen Mejoramiento'" [routerLink]="['/estudiante/curso', tarea.curso_formado_id, 'tarea', tarea.id]"> <i class="fa-solid fa-file-lines"></i> {{tarea.nombre}} </a>
+            
+            <span class="estado" *ngIf="tarea.estado_tarea === 'No enviado'" style="color: #8B1A1A;"> <i class="fa-solid fa-circle-exclamation"></i> {{tarea.estado_tarea}} </span>
+            <span class="estado" *ngIf="tarea.estado_tarea === 'Enviado'" style="color: #006400;"> <i class="fa-solid fa-circle-check"></i> {{tarea.estado_tarea}} </span>
+            
+        </div>
+
+    </div>
+
+</div>

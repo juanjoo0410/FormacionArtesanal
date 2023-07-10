@@ -1,0 +1,141 @@
+.tarjeta {
+    width: 95%;
+    box-shadow: 0 10px 20px -12px rgb(0 0 0 / 42%), 0 3px 20px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+    padding: 40px;
+}
+
+.tema {
+    border-bottom: 3px solid #C9C9C9;
+}
+
+.titulo {
+    font-size: 25pt;
+    font-weight: bold;
+    /* color: #56B9B3; */
+}
+
+.titulo1 {
+    font-size: 20pt;
+    font-weight: bold;
+    /* color: #56B9B3; */
+}
+
+.descripcion {
+    font-size: 13pt;
+    color: #808080;
+}
+
+.info {
+    margin-top: 20px;
+    background-image: linear-gradient(45deg, #0080a8, #56B9B3, #a2d6d2);
+    box-shadow: 0 10px 20px -12px rgb(0 0 0 / 42%), 0 3px 20px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+    padding: 30px 40px;
+    color: white;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.agregar {
+    background-color: transparent;
+    color: #56B9B3;
+    border: none;
+    font-size: 15pt;
+}
+
+.boton {
+    background-color: white;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.margin {
+    margin-bottom: 0;
+}
+
+.contenedor-fechas {
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.asignacion {
+    color: #808080;
+    margin-bottom: 0;
+}
+
+.punto {
+    font-size: 10px;
+    color: #56B9B3;
+}
+
+.fechas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    margin-top: 20px;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+}
+
+.fecha {
+    margin-left: 25px;
+}
+
+.hora {
+    font-size: 15pt;
+    font-weight: 500;
+}
+
+.color {
+    color: #808080;
+}
+
+.text {
+    font-weight: 500;
+}
+
+.fechas:hover {
+    background-color: #E8E8E8;
+    cursor: pointer;
+}
+
+.estado {
+    font-size: 13pt;
+}
+
+.actual {
+    font-size: 15pt;
+}
+
+.botones {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.primary-btn, .secondary-btn {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    border: none;
+    text-align: center;
+    box-shadow: 0 10px 20px -12px rgb(0 0 0 / 42%), 0 3px 20px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+}
+
+.primary-btn {
+    background-color: #56B9B3 !important;
+    color: white;
+}
+
+.secondary-btn {
+    background-color: #FFFEFE !important;
+    color: black;
+}

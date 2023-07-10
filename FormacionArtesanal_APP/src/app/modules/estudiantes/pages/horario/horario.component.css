@@ -1,0 +1,17 @@
+.contenido {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.cabecera  th{
+    background-color: #0F414C;
+    font-weight: 500;
+    font-size: 18px;
+    border: none;
+    text-align: center;
+}
+
+
+td:nth-child(2), td:nth-child(3), td:nth-child(5), td:nth-child(6), td:nth-child(7), td:nth-child(8), td:nth-child(9) {
+    text-align: center;
+}

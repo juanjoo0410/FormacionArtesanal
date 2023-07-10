@@ -1,0 +1,38 @@
+<div class="contenedor-titulo-h1 mt-5">
+    <h1 class="h1-titulo">HORARIO</h1>
+</div>
+
+<div class="contenido">
+  <div class="table-responsive">
+    <table class="table table-hover tabla align-middle table-striped">
+      <thead class="table-dark cabecera">
+        <tr>
+          <th scope="col">Materia</th>
+          <th scope="col">Curso</th>
+          <th scope="col">Módulo</th>
+          <th scope="col">Docente</th>
+          <th scope="col">Lunes</th>
+          <th scope="col">Martes</th>
+          <th scope="col">Jueves</th>
+          <th scope="col">Miércoles</th>
+          <th scope="col">Viernes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let curs of curso">
+          <td>{{ curs.materia }}</td>
+          <td>{{ curs.curso }}</td>
+          <td *ngIf="curs.modulo == 'Módulo 1'"> 1 </td>
+          <td *ngIf="curs.modulo == 'Módulo 2'"> 2 </td>
+          <td>{{ curs.docente }}</td>
+          <td>{{ curs.hora_inicio }}</td>
+          <td>{{ curs.hora_inicio }}</td>
+          <td>{{ curs.hora_inicio }}</td>
+          <td>{{ curs.hora_inicio }}</td>
+          <td>{{ curs.hora_inicio }}</td>
+        </tr>
+          
+      </tbody>
+    </table>
+  </div>
+</div>

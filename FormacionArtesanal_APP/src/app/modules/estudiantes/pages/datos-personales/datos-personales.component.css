@@ -1,0 +1,98 @@
+.contenido {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 900px;
+    position: relative;
+    box-shadow: 0 10px 20px -12px rgb(0 0 0 / 42%), 0 3px 20px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+    border-radius: 10px;
+}
+
+.left {
+    width: 20%;
+    background-color: #56B9B3;
+}
+
+.right {
+    padding: 70px 50px;
+    width: 80%;
+}
+
+.titulo h1{
+    font-weight: bold;
+    font-size: 13pt;
+    text-align: right;
+    color: #56B9B3;
+}
+
+.estudiante {
+    margin-top: 20px;
+    border-bottom: 3px solid #E8E8E8;
+}
+
+.estudiante h2 {
+    font-size: 22pt;
+}
+
+.info {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.tema {
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.dato {
+    margin-bottom: 40px;
+    color: #808080;
+}
+
+.botones {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.primary-btn, .secondary-btn {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    border: none;
+    text-align: center;
+    box-shadow: 0 10px 20px -12px rgb(0 0 0 / 42%), 0 3px 20px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+}
+
+.primary-btn {
+    background-color: #56B9B3 !important;
+    color: white;
+}
+
+.secondary-btn {
+    background-color: #FFFEFE !important;
+    color: black;
+}
+
+.icono {
+    position: absolute;
+    top: 15px;
+    left: calc(20% - 50px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: 6px solid white;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background-image: linear-gradient(45deg, #0080a8, #56B9B3, #a2d6d2);
+    font-size: 40px;
+}
+
+.contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

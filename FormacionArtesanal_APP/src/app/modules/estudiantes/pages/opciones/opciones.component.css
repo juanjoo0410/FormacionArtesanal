@@ -1,0 +1,86 @@
+.tarjeta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 40px;
+    justify-items: center;
+    align-items: center;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.opcion {
+    display: flex;    
+    background-color: #85e3f0;
+    min-width: 200px;
+    max-width: 200px;
+    min-height: 200px;
+    max-height: 200px;
+    --bg: #e6e6e6;
+    --hover-bg: #e5fffc;
+    --hover-text: #0067e5;
+    text-align: center;
+    background: var(--bg);
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    /* overflow: hidden; */
+    align-items: center;
+    transition: .3s cubic-bezier(.6, .4, 0, 1), transform .15s ease;
+}
+
+.opcion .icono {
+    width: 100%;
+    border-radius: 5px;
+    font-size: 80px;
+}
+
+.opcion:hover {
+    cursor: pointer;
+}
+
+.opcion> :not(span) {
+    transition: .3s cubic-bezier(.6, .4, 0, 1);
+}
+
+.opcion span {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #56B9B3;
+    border-radius: 5px;
+    font-weight: bold;
+    top: 38%;
+    transition: all .3s cubic-bezier(.6, .4, 0, 1);
+}
+
+.opcion:hover span {
+    top: 0;
+    font-size: 1.2em;
+}
+
+.opcion:hover {
+    background: var(--hover-bg);
+}
+
+.opcion:hover>.icono {
+    opacity: 0;
+}
+
+@media screen and (max-width: 586px) {
+
+    .opcion {
+        min-width: 130px;
+        max-width: 130px;
+        min-height: 130px;
+        max-height: 130px;
+    }
+
+    .tarjeta {
+        gap: 15px;
+    }
+}

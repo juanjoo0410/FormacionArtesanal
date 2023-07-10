@@ -1,0 +1,86 @@
+<div class="contenedor">
+
+    <div class="contenido">
+
+        <div class="tarjeta">
+
+            <div class="tema">
+                <h1 class="titulo"> {{tareaIndividual.nombre}} </h1>
+                <p class="descripcion"> {{tareaIndividual.descripcion}} </p>
+            </div>
+            
+            <div class="info">
+                <p *ngIf="compararFechas()" class="estado"> Pendiente </p>
+                <p *ngIf="!compararFechas()" class="estado"> Atrasada </p>
+                <div class="flex">
+                    <p class="margin actual"> {{fechaActualString}} </p>
+                    <div class="boton">
+                        <button class="agregar" (click)="toggleArea()">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="entrega mt-4" *ngIf="activeArea">
+
+                <h1 class="titulo1">ENTREGA</h1>
+
+                <textarea autofocus class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+
+                <div class="botones">
+                    <button class="secondary-btn" (click)="toggleArea()">
+                        <i class="fa-solid fa-ban"></i> Cancelar
+                    </button>
+                    
+                    <button class="primary-btn">
+                        <i class="fa-solid fa-paper-plane"></i> Enviar
+                    </button>
+                </div>
+            </div>
+
+            <div class="contenedor-fechas">
+
+                <p class="asignacion"> Fechas de la asignación </p>
+
+                <div class="fechas">
+
+                    <div class="content">
+                        
+                        <div class="punto"><i class="fa-solid fa-circle"></i></div>
+
+                        <div class="fecha">
+                            <p class="margin hora"> {{horaInicioString}} </p>
+                            <p class="margin color"> {{fechaInicioString}} </p>
+                        </div>
+                        
+                    </div>
+
+                    <p class="margin text"> INICIO </p>
+
+                </div>
+
+                <div class="fechas">
+
+                    <div class="content">
+
+                        <div class="punto"><i class="fa-solid fa-circle"></i></div>
+
+                        <div class="fecha">
+                            <p class="margin hora"> {{horaFinString}} </p>
+                            <p class="margin color"> {{fechaFinString}} </p>
+                        </div>
+
+                    </div>
+
+                    <div><p class="margin text"> FIN </p>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

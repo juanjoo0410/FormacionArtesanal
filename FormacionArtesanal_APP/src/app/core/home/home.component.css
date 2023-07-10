@@ -1,0 +1,240 @@
+
+/* --- ENCABEZADO ---*/
+#encabezado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #84a7c4;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 10px 20px -12px rgb(0 0 0 / 42%), 0 3px 20px 0px rgba(119, 15, 15, 0.12), 0 8px 10px -5px rgb(0 0 0 / 20%);
+}
+
+.imagen-encabezado {
+    height: calc(100vh - 50px);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url(../../../assets/img/fondo1.png);
+    width: 100%;
+    opacity: 0.18;
+    transition: opacity 2s ease-in-out;
+    position: relative;
+}
+
+.contenido-encabezado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    animation: bajar 1.5s ease-out;
+    animation-fill-mode: forwards;
+    padding: 30px;
+}
+
+.contenido-encabezado h1 {
+    /* font-size: 40pt; */
+    margin: 10px;
+    padding: 15px 0;
+    letter-spacing: 2px;
+    position: relative;
+    text-align: center;
+}
+
+.contenido-encabezado h1:before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    bottom: 0;
+    left: 25%;
+    right: 25%;
+    border-bottom: #293eb4 solid 5px;
+}
+
+.contenido-encabezado p {
+    /* width: 90%; */
+    text-align: center;
+    margin-top: 50px;
+    font-size: 16pt;
+    color: white;
+}
+
+.button {
+    /* margin: 0 !important; */
+    align-self: center;
+    text-decoration: none;
+    margin-top: 30px;
+    padding: 15px 25px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid rgb(255, 255, 255);
+    font-size: 14pt;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: white;
+    border: 2px solid white;
+    color: rgb(56, 70, 190);
+    transition: 0.5s;
+}
+
+.button:not(hover) {
+    background-color: transparent;
+    border: 2px solid white;
+    transition: 0.5s;
+}
+
+
+@keyframes bajar {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* FIN ENCABEZADO */
+
+.separador {
+    height: 100px;
+}
+
+/* ATRIBUTOS */
+.atributos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
+    gap: 25px;
+    padding: 30px;
+    
+}
+
+.atributo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    text-align: center;
+    flex-basis: 0;
+    flex-grow: 1;
+    min-width: 250px;
+    max-width: 400px;
+}
+
+.logo {
+    height: 140px;
+    width: 140px;
+    overflow: hidden;
+    background-color: var(--color);
+    border-radius: 50%;
+    box-shadow: 0 10px 20px -12px rgb(0 0 0 / 42%), 0 3px 20px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+    color: white;
+}
+
+.atributos mat-icon {
+    height: inherit;
+    width: inherit;
+    padding: 50px;
+    font-size: 40px;
+    /* overflow: visible; */
+}
+/* FIN ATRIBUTOS */
+
+.title {
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+.divider {
+    background-color: #293eb4 ;
+    height: 3px;
+    width: 70%;
+    margin-bottom: 10px;
+}
+
+/* MODULOS */
+.modulos {
+    background-color: #0f1a2c;
+    padding: 50px 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.titulo {
+    color: white;
+}
+
+.bloques {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.bloque {
+    flex-basis: 0;
+    flex-grow: 1;
+    min-width: 400px;
+    max-width: 500px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+.bloque h2 {
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+    align-self: center;
+}
+
+.bloque h2:before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    bottom: 0;
+    left: 25%;
+    right: 25%;
+    border-bottom: #293eb4 solid 5px;
+}
+
+.contenido {
+    margin-top: 20px;
+}
+
+/* BOTÓN PARA SUBIR */
+.fixed-button-container {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .fixed-button-container button {
+    background-color: #378869;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .fixed-button-container.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+  }

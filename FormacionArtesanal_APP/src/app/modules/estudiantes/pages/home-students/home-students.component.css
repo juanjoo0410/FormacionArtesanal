@@ -1,0 +1,13 @@
+.contenedor-principal {
+    padding: 0 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.navegacion {
+    width: 20%;
+}
+
+.cursos {
+    width: 60%;
+}

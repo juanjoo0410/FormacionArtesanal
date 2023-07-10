@@ -1,0 +1,180 @@
+<div class="contenedor-principal">
+    <div class="boton">
+        <button (click)="closeDialog()" class="cerrar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+    <div class="tabs">
+      <mat-tab-group>
+        <mat-tab label="ESTUDIANTES">
+          
+          <form [formGroup]="formRegistro" (ngSubmit)="onSubmit()" class="formulario">
+            <mat-form-field class="campos-field" appearance="outline" hideRequiredMarker="true">
+              <mat-label>Cédula</mat-label>
+              <input matInput formControlName="cedula">
+              <mat-error *ngIf="formRegistro.controls['cedula'].hasError('required')">Cédula es requerida.</mat-error>
+              <mat-error *ngIf="formRegistro.controls['cedula'].hasError('pattern')">Cédula no válida.</mat-error>
+              <mat-error *ngIf="formRegistro.controls['cedula'].hasError('maxlength')">Cédula no puede tener más de 10
+                caracteres.</mat-error>
+              <mat-error *ngIf="formRegistro.controls['cedula'].hasError('minlength')">Cédula debe tener al menos 10
+                caracteres.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="campos-field" appearance="outline" hideRequiredMarker="true">
+              <mat-label>Nombres</mat-label>
+              <input matInput formControlName="nombres">
+              <mat-error *ngIf="formRegistro.controls['nombres'].hasError('required')">Nombre es requerido.</mat-error>
+              <mat-error *ngIf="formRegistro.controls['nombres'].hasError('pattern')">Nombre no válido.</mat-error>
+              <mat-error *ngIf="formRegistro.controls['nombres'].hasError('maxlength')">Nombre no puede tener más de 100
+                caracteres.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="campos-field" appearance="outline" hideRequiredMarker="true">
+              <mat-label>Apellidos</mat-label>
+              <input matInput formControlName="apellidos">
+              <mat-error *ngIf="formRegistro.controls['apellidos'].hasError('required')">Nombre es requerido.</mat-error>
+              <mat-error *ngIf="formRegistro.controls['apellidos'].hasError('pattern')">Nombre no válido.</mat-error>
+              <mat-error *ngIf="formRegistro.controls['apellidos'].hasError('maxlength')">Nombre no puede tener más de 100
+                caracteres.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="campos-field" appearance="outline" hideRequiredMarker="true">
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email">
+              <mat-error *ngIf="formRegistro.controls['email'].hasError('required')">Email es requerido.</mat-error>
+              <mat-error *ngIf="formRegistro.controls['email'].hasError('email')">Email no válido.</mat-error>
+              <mat-error *ngIf="formRegistro.controls['email'].hasError('maxlength')">Email no puede tener mas de 150
+                caracteres.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="campos-field" appearance="outline" hideRequiredMarker="true">
+              <mat-label>Teléfono</mat-label>
+              <input matInput formControlName="telefono">
+              <mat-error *ngIf="formRegistro.controls['telefono'].hasError('required')">Teléfono es requerido.</mat-error>
+              <mat-error *ngIf="formRegistro.controls['telefono'].hasError('pattern')">Teléfono no válido.</mat-error>
+              <mat-error *ngIf="formRegistro.controls['telefono'].hasError('maxlength')">Teléfono no puede tener más de 10
+                caracteres.</mat-error>
+              <mat-error *ngIf="formRegistro.controls['telefono'].hasError('minlength')">Teléfono debe tener al menos 9
+                caracteres.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="campos-field" appearance="outline" hideRequiredMarker="true">
+              <mat-label>Nivel de Educación</mat-label>
+              <mat-select formControlName="nivel">
+                <mat-option value="secundaria">
+                  Secundaria
+                </mat-option>
+                <mat-option value="bachillerato">
+                  Bachillerato
+                </mat-option>
+                <mat-option value="superior">
+                  Educación Superior
+                </mat-option>
+                <mat-option value="posgrado">
+                  Maestría o Doctorado
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="formRegistro.controls['nivel'].hasError('required')">Nivel de educación es requerido.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="campos-field" appearance="outline" hideRequiredMarker="true" style="grid-column: span 2;">
+              <mat-label>Dirección</mat-label>
+              <input matInput formControlName="direccion">
+              <mat-error *ngIf="formRegistro.controls['direccion'].hasError('required')">Dirección es requerida.</mat-error>
+              <mat-error *ngIf="formRegistro.controls['direccion'].hasError('pattern')">Dirección no válida.</mat-error>
+              <mat-error *ngIf="formRegistro.controls['direccion'].hasError('maxlength')">Dirección no puede tener más de 150
+                caracteres.</mat-error>
+            </mat-form-field>
+
+            <button class="btnEnviar"  color="primary"  mat-raised-button type="submit" style="grid-column: span 2;">ACEPTAR</button>
+
+          </form>
+        </mat-tab>
+
+        <!-- FORMULARIO DE PROFESORES -->
+        <mat-tab label="PROFESORES">
+          
+          <form [formGroup]="formRegistroProfesores" (ngSubmit)="onSubmit()" class="formulario">
+            <mat-form-field class="campos-field" appearance="outline" hideRequiredMarker="true">
+              <mat-label>Cédula</mat-label>
+              <input matInput formControlName="cedula">
+              <mat-error *ngIf="formRegistroProfesores.controls['cedula'].hasError('required')">Cédula es requerida.</mat-error>
+              <mat-error *ngIf="formRegistroProfesores.controls['cedula'].hasError('pattern')">Cédula no válida.</mat-error>
+              <mat-error *ngIf="formRegistroProfesores.controls['cedula'].hasError('maxlength')">Cédula no puede tener más de 10
+                caracteres.</mat-error>
+              <mat-error *ngIf="formRegistroProfesores.controls['cedula'].hasError('minlength')">Cédula debe tener al menos 10
+                caracteres.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="campos-field" appearance="outline" hideRequiredMarker="true">
+              <mat-label>Nombres</mat-label>
+              <input matInput formControlName="nombres">
+              <mat-error *ngIf="formRegistroProfesores.controls['nombres'].hasError('required')">Nombre es requerido.</mat-error>
+              <mat-error *ngIf="formRegistroProfesores.controls['nombres'].hasError('pattern')">Nombre no válido.</mat-error>
+              <mat-error *ngIf="formRegistroProfesores.controls['nombres'].hasError('maxlength')">Nombre no puede tener más de 100
+                caracteres.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="campos-field" appearance="outline" hideRequiredMarker="true">
+              <mat-label>Apellidos</mat-label>
+              <input matInput formControlName="apellidos">
+              <mat-error *ngIf="formRegistroProfesores.controls['apellidos'].hasError('required')">Nombre es requerido.</mat-error>
+              <mat-error *ngIf="formRegistroProfesores.controls['apellidos'].hasError('pattern')">Nombre no válido.</mat-error>
+              <mat-error *ngIf="formRegistroProfesores.controls['apellidos'].hasError('maxlength')">Nombre no puede tener más de 100
+                caracteres.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="campos-field" appearance="outline" hideRequiredMarker="true">
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email">
+              <mat-error *ngIf="formRegistroProfesores.controls['email'].hasError('required')">Email es requerido.</mat-error>
+              <mat-error *ngIf="formRegistroProfesores.controls['email'].hasError('email')">Email no válido.</mat-error>
+              <mat-error *ngIf="formRegistroProfesores.controls['email'].hasError('maxlength')">Email no puede tener mas de 150
+                caracteres.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="campos-field" appearance="outline" hideRequiredMarker="true">
+              <mat-label>Teléfono</mat-label>
+              <input matInput formControlName="telefono">
+              <mat-error *ngIf="formRegistroProfesores.controls['telefono'].hasError('required')">Teléfono es requerido.</mat-error>
+              <mat-error *ngIf="formRegistroProfesores.controls['telefono'].hasError('pattern')">Teléfono no válido.</mat-error>
+              <mat-error *ngIf="formRegistroProfesores.controls['telefono'].hasError('maxlength')">Teléfono no puede tener más de 10
+                caracteres.</mat-error>
+              <mat-error *ngIf="formRegistroProfesores.controls['telefono'].hasError('minlength')">Teléfono debe tener al menos 9
+                caracteres.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="campos-field" appearance="outline" hideRequiredMarker="true">
+              <mat-label>Título Universitario</mat-label>
+              <mat-select formControlName="nivel">
+                <mat-option value="1">
+                  Tercer nivel
+                </mat-option>
+                <mat-option value="2">
+                  Cuarto nivel sin afinidad
+                </mat-option>
+                <mat-option value="3">
+                  Cuarto nivel con afinidad
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="formRegistroProfesores.controls['nivel'].hasError('required')">Nivel de educación es requerido.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="campos-field" appearance="outline" hideRequiredMarker="true" style="grid-column: span 2;">
+              <mat-label>Dirección</mat-label>
+              <input matInput formControlName="direccion">
+              <mat-error *ngIf="formRegistroProfesores.controls['direccion'].hasError('required')">Dirección es requerida.</mat-error>
+              <mat-error *ngIf="formRegistroProfesores.controls['direccion'].hasError('pattern')">Dirección no válida.</mat-error>
+              <mat-error *ngIf="formRegistroProfesores.controls['direccion'].hasError('maxlength')">Dirección no puede tener más de 150
+                caracteres.</mat-error>
+            </mat-form-field>
+
+            <button class="btnEnviar"  color="primary"  mat-raised-button type="submit" style="grid-column: span 2;">ACEPTAR</button>
+
+          </form>
+        </mat-tab>
+
+      </mat-tab-group>
+    </div>
+</div>

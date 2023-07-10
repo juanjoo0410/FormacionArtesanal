@@ -1,0 +1,46 @@
+.contenedor-principal {
+    padding: 20px 40px;
+    text-align: center;
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+    /* background-color: #56B9B3;
+    color: white; */
+}
+
+.contenedor-principal::before {
+    content: "";
+    position: absolute;
+    background-color: #378869;
+    width: 100%;
+    height: 100%;
+    top: 360px;
+    left: 0;
+    transform: skewY(-19.5deg);
+}
+
+.btnEnviar {
+    background-color: #212529 !important;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+
+.boton {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.cerrar {
+    background-color: transparent;
+    border: none;
+    font-size: 1.2em;
+}
+
+.title-login {
+    margin-bottom: 20px;
+}

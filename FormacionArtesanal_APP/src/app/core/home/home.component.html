@@ -1,0 +1,134 @@
+<!-- ENCABEZADO -->
+<section id="encabezado">
+    <div class="imagen-encabezado"></div>
+    <div class="contenido-encabezado">
+        <h1>Centro de Formación Artesanal UG</h1>
+        <p>Comprometidos con la excelencia académica y la formación de líderes innovadores y responsables!</p>
+        <a class="button" (click)="openDialogRegistro()">INSCRIBIRSE</a>
+    </div>
+</section>
+
+<div class="separador"></div>
+
+<!-- CUERPO -->
+<div class="contenedor-principal">
+
+    <!-- ATRIBUTOS -->
+    <div class="atributos">
+
+        <!-- CURSOS ONLINE -->
+        <div class="atributo">
+            <div class="logo" style="--color: #15b2ce;">
+                <mat-icon>account_balance</mat-icon>
+            </div>
+
+            <h4 class="title">CURSOS EN LÍNEA</h4>
+            <p>ONLINE COURSES</p>
+
+            <div class="divider"  style="--bg: #FF8787;"></div>
+
+            <div class="frase">
+                <p>Estudia desde cualquier lugar con nuestros cursos online de alta calidad.</p>
+            </div>
+        </div>
+
+        <!-- INSTRUCTOR -->
+        <div class="atributo">
+            <div class="logo" style="--color: #b672d1;">
+                <mat-icon>hail</mat-icon>
+            </div>
+
+            <h4 class="title">CONVIÉRTETE EN UN INSTRUCTOR</h4>
+            <p>BECOME AN INSTRUCTOR</p>
+
+            <div class="divider"  style="--bg: #B7D1EA;"></div>
+
+            <div class="frase">
+                <p>Comparte tu conocimiento y experiencia con nuestro equipo de instructores y ayúdanos a crear la próxima generación de líderes.</p>
+            </div>
+        </div>
+
+        <!-- MULTIMEDIA -->
+        <div class="atributo">
+            <div class="logo" style="--color: #C2B2BE;">
+                <mat-icon>app_registration</mat-icon>
+            </div>
+
+            <h4 class="title">UNIDADES MULTIMEDIA</h4>
+            <p>MULTI-MEDIA UNITS</p>
+
+            <div class="divider"  style="--bg: #C2B2BE;"></div>
+
+            <div class="frase">
+                <p>Explora nuevos horizontes de aprendizaje con nuestras unidades multimedia interactivas que estimulan la creatividad y la innovación.</p>
+            </div>
+        </div>
+
+        <!-- INSCRIBIRSE A CURSOS -->
+        <div class="atributo">
+            <div class="logo" style="--color: #5dac8d;">
+                <mat-icon>cast_for_education</mat-icon>
+                <!-- <mat-icon>queue_play_next</mat-icon> -->
+            </div>
+
+            <h4 class="title">INSCRÍBETE A CURSOS</h4>
+            <p>SUBSCRIBE COURSES</p>
+
+            <div class="divider"  style="--bg: #F7DC6F;"></div>
+
+            <div class="frase">
+                <p>Abre la puerta a nuevas oportunidades y expande tus conocimientos inscribiéndote en nuestros cursos.</p>
+            </div>
+        </div>
+        
+    </div>
+    <!-- FIN ATRIBUTOS -->
+
+    <div class="separador"></div>
+
+    <!-- MODULOS -->
+    <div class="modulos">
+
+        <h1 class="titulo">Plan Académico</h1>
+        
+        <div class="bloques">
+        
+            <!-- MODULO 1 -->
+            <div class="bloque bloque1">
+                <h2>Módulo 1</h2>
+                <div class="contenido">
+                    <ul class="list-group">
+                        <li class="list-group-item">Mantenimiento de Computadoras</li>
+                        <li class="list-group-item">Robótica</li>
+                        <li class="list-group-item">Desarrollo Web</li>
+                        <li class="list-group-item">Inglés</li>
+                        <li class="list-group-item">Cableado Estructurado</li>
+                      </ul>
+                </div>
+            </div>
+
+            <!-- MODULO 2 -->
+            <div class="bloque bloque2">
+                <h2>Módulo 2</h2>
+                <div class="contenido">
+                    <ul class="list-group">
+                        <li class="list-group-item">Base de Datos</li>
+                        <li class="list-group-item">BigData</li>
+                        <li class="list-group-item">Machine Learning</li>
+                        <li class="list-group-item">Finanzas Básicas</li>
+                        <li class="list-group-item">Derecho Laboral</li>
+                      </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fixed-button-container" [ngClass]="{ 'hidden': !showButton }">
+    <button (click)="scrollToTop()">
+        <i class="fa-solid fa-angle-up"></i>
+    </button>
+</div>
+
+
+<div class="separador"></div>

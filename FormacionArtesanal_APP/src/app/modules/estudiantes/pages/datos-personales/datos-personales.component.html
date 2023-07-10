@@ -1,0 +1,45 @@
+<div class="contenedor mt-5">
+
+    <div class="contenido">
+        <div class="box left"></div>
+
+        <div class="box right">
+            <div class="titulo">
+                <h1>DATOS PERSONALES</h1>
+            </div>
+
+            <div class="estudiante">
+                <h2> {{estudiante.nombres}} {{estudiante.apellidos}} </h2>
+            </div>
+
+            <div class="info">
+                <p class="tema">Cédula</p>
+                <p class="tema">Edad</p>
+                <p class="tema">Email</p>
+                <p class="dato"> {{estudiante.cedula}} </p>
+                <p class="dato"> {{estudiante.edad}} años </p>
+                <p class="dato"> {{estudiante.email}} </p>
+
+                <p class="tema">Teléfono</p>
+                <p class="tema" style="grid-column: 2/4;">Dirección</p>
+                <p class="dato"> {{estudiante.telefono}} </p>
+                <p class="dato"> {{estudiante.direccion}} </p>
+            </div>
+
+            <div class="botones">
+                <button class="secondary-btn">
+                    <i class="fa-solid fa-arrow-left"></i> Volver
+                </button>
+                
+                <button class="primary-btn">
+                    <i class="fa-solid fa-pen-to-square"></i> Editar
+                </button>
+            </div>
+        </div>
+        
+        <div class="icono">
+            <i class="fa-solid fa-user"></i>
+        </div>
+    </div>
+
+</div>

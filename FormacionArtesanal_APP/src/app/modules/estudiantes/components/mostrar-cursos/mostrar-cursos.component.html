@@ -1,0 +1,23 @@
+<div class="tarjetas">
+    <div class="card" *ngFor="let curso of cursos" (click)="irCurso(curso.id!)">
+        <div class="area" >
+            <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+        </div >
+        <div class="card-body">
+          <h5 class="card-title">{{curso.materia}}</h5>
+          <p class="card-text">{{curso.curso}}</p>
+        </div>
+    </div>
+</div>
+

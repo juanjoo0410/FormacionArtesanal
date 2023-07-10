@@ -1,0 +1,130 @@
+<div class="hide-mobile">
+    <div>
+        <nav>
+            <a href="" class="logo-title">
+                CENTRO ARTESANAL UG
+            </a>
+
+            <ul *ngIf="rol === 0">
+                <li><a routerLink="inicio" routerLinkActive="activeLink" href="">Inicio</a></li>
+                <li><a routerLink="estudiantes" routerLinkActive="activeLink" href="">Estudiantes</a></li>
+                <li><a routerLink="profesores" routerLinkActive="activeLink" href="">Profesores</a></li>
+            </ul>
+
+            <ul *ngIf="rol === 1">
+                <li><a routerLink="estudiante/inicio" routerLinkActive="activeLink" href="">Inicio</a></li>
+                <li><a routerLink="estudiante/opciones" routerLinkActive="activeLink" href="">Herramientas</a></li>
+            </ul>
+
+        </nav>
+
+        <div class="info">
+
+            <!-- SE MUESTRA CUANDO HAY UN USUARIO LOGUEADO -->
+            <div class="info-active" *ngIf="active">
+
+                <span class="user">{{ usuario }}</span>
+
+                <div class="account">
+                    <!-- Si hay un usuario, se presenta el menú -->
+                    <button [matMenuTriggerFor]="menu" class="menu-item" matTooltip="Mi cuenta">
+                      <i class="fa-solid fa-user"></i>
+                      <i class="mx-1 fa-solid fa-caret-down"></i>
+                    </button>
+                 </div>
+
+            </div>
+
+            <!-- SE MUESTRA CUANDO NO HAY UN USUARIO LOGUEADO -->
+            <div class="info-inactive" *ngIf="!active">
+
+                <div class="botones">
+                    <!-- BOTÓN DE LOGIN -->
+                    <button class="secondary-btn" matTooltip="Iniciar sesión" (click)="openLogin()">
+                        Login
+                    </button>
+                    
+                    <!-- BOTÓN DE REGISTRARSE -->
+                    <button class="primary-btn" matTooltip="Registrarse" (click)="openRegistro()">
+                        Sign up
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- FIN MENÚ NORMAL -->
+
+
+<!-- MENÚ MOBILE -->
+<div class="show-mobile">
+    <div>
+        <!-- BOTÓN DE MENÚ -->
+      <button class="menu-item" (click)="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <!-- LOGO -->
+      <a href="" class="logo-title">
+        CENTRO ARTESANAL UG 
+      </a>
+
+      <div class="info">
+
+        <div class="info-active" *ngIf="active">
+
+            <div class="account">                
+                <!-- Si hay un usuario, se presenta el menú -->
+                <button [matMenuTriggerFor]="menu" class="menu-item" matTooltip="Mi cuenta">
+                  <i class="fa-solid fa-user"></i>
+                </button>
+             </div>
+
+        </div>
+
+        <!-- SE MUESTRA CUANDO NO HAY UN USUARIO LOGUEADO -->
+        <div class="info-inactive" *ngIf="!active">
+            <div class="botones">
+                <!-- BOTÓN DE LOGIN -->
+                <button class="secondary-btn" matTooltip="Iniciar sesión" (click)="openLogin()">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                </button>
+                
+                <!-- BOTÓN DE REGISTRARSE -->
+                <button class="primary-btn" matTooltip="Registrarse" (click)="openRegistro()">
+                    <i class="fa-solid fa-user-plus"></i>
+                </button>
+            </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MENÚ LATERAL -->
+    <div class="side-menu" [class.active]="activeMenu">
+        <button  (click)="toggleMenu()"><i class="fa-solid fa-xmark"></i></button>
+        <ul>
+            <li><a routerLink="inicio" (click)="toggleMenu()" href="">Inicio</a></li>
+            <li><a routerLink="estudiantes" (click)="toggleMenu()" href="">Estudiantes</a></li>
+            <li><a routerLink="profesores" (click)="toggleMenu()" href="">Profesores</a></li>
+        </ul>
+
+    </div>
+</div>
+<!-- FIN MENÚ MOBILE -->
+
+
+  <!-- SUBMENÚ PERFIL -->
+  <mat-menu #menu>
+    <!-- Botón de perfil -->
+    <button mat-menu-item>
+      <i class="fa-solid fa-user-check"></i> Perfil
+    </button>
+    <!-- Barra divisora -->
+    <mat-divider></mat-divider>
+    <!-- Botón de logout -->
+    <button mat-menu-item (click)="logout()">
+      <i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión
+    </button>    
+  </mat-menu>

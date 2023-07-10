@@ -1,0 +1,18 @@
+<div class="container mt-5">
+
+    <div class="contenedor-titulo-h1">
+        <h1 class="h1-titulo">OPCIONES AVANZADAS</h1>
+    </div>
+
+    <div class="tarjeta">
+        
+        <div class="opcion" *ngFor="let opcion of opciones" (click)="irOpcion(opcion.nombre)">
+            <div class="icono">
+                <i [ngClass]="opcion.class"></i>
+            </div>
+            <span>{{ opcion.nombre }}</span>
+        </div>
+
+    </div>
+
+</div>

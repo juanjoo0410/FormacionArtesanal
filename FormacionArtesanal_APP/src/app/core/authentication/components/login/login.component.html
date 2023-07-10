@@ -1,0 +1,44 @@
+<div class="contenedor-principal">
+
+  <div class="boton">
+      <button (click)="closeDialog()" class="cerrar">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+  </div>
+  
+  <div class="title-login">
+    <h1>INICIO DE SESIÓN</h1>
+  </div>
+  
+      <form [formGroup]="formLogin" (ngSubmit)="onSubmit()" class="formulario">
+      
+        <mat-form-field appearance="outline" hideRequiredMarker="true">
+          <mat-label>Ingresa tu cédula</mat-label>
+          <input matInput type="cedula" required formControlName="cedula" />
+          <mat-error *ngIf="formLogin.controls['cedula'].hasError('required')">Cédula es requerida.</mat-error>
+          <mat-error *ngIf="formLogin.controls['cedula'].hasError('minlength')">Cédula debe contener mínimo 10
+            carateres.</mat-error>
+          <mat-error *ngIf="formLogin.controls['cedula'].hasError('maxlength')">Cédula debe contener máximo 10
+            carateres.</mat-error>
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" hideRequiredMarker="true">
+          <mat-label>Ingresa tu contraseña</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" required formControlName="password" />
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide" type="button">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-error *ngIf="formLogin.controls['password'].hasError('required')">Contraseña es requerida.</mat-error>
+          <mat-error *ngIf="formLogin.controls['password'].hasError('minlength')">Contraseña debe tener al menos 8
+            caracteres.</mat-error>
+          <mat-error *ngIf="formLogin.controls['password'].hasError('maxlength')">Contraseña no puede tener mas de 16
+            caracteres.</mat-error>
+        </mat-form-field>
+        
+
+        <button class="btnEnviar" color="primary"  mat-raised-button type="submit">ACEPTAR</button>
+    
+      </form>
+
+</div>

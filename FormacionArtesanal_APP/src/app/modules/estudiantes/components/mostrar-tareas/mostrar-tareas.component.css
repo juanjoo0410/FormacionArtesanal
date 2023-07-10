@@ -1,0 +1,16 @@
+a {
+    text-decoration: none;
+    font-size: 20pt;
+}
+
+.tareas {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+}
+
+.estado {
+    font-size: 15pt;
+}

@@ -1,0 +1,106 @@
+/* --- ENCABEZADO ---*/
+#encabezado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #0f1a2c;
+    color: white;
+    box-shadow: 0 10px 20px -12px rgb(0 0 0 / 42%), 0 3px 20px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+}
+
+.imagen-encabezado {
+    height: calc(100vh - 50px);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url(../../../../assets/img/profesores.jpg);
+    width: 100%;
+    opacity: 0.18;
+    transition: opacity 2s ease-in-out;
+    position: relative;
+}
+
+.contenido-encabezado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    animation: bajar 1.5s ease-out;
+    animation-fill-mode: forwards;
+    padding: 30px;
+}
+
+.contenido-encabezado h1 {
+    /* font-size: 40pt; */
+    margin: 10px;
+    padding: 15px 0;
+    letter-spacing: 2px;
+    position: relative;
+    text-align: center;
+}
+
+.contenido-encabezado h1:before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    bottom: 0;
+    left: 25%;
+    right: 25%;
+    border-bottom: #293eb4 solid 5px;
+}
+
+.contenido-encabezado p {
+    /* width: 90%; */
+    text-align: center;
+    margin-top: 50px;
+    font-size: 16pt;
+    color: white;
+}
+
+.button {
+    /* margin: 0 !important; */
+    align-self: center;
+    text-decoration: none;
+    margin-top: 30px;
+    padding: 15px 25px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    font-size: 14pt;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: white;
+    border: 2px solid white;
+    color: black;
+    transition: 0.5s;
+}
+
+.button:not(hover) {
+    background-color: transparent;
+    border: 2px solid white;
+    transition: 0.5s;
+}
+
+
+@keyframes bajar {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* FIN ENCABEZADO */
+
+.separador {
+    height: 100px;
+}
