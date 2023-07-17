@@ -22,8 +22,9 @@
         <tr *ngFor="let curs of curso">
           <td>{{ curs.materia }}</td>
           <td>{{ curs.curso }}</td>
-          <td *ngIf="curs.modulo == 'Módulo 1'"> 1 </td>
-          <td *ngIf="curs.modulo == 'Módulo 2'"> 2 </td>
+          <td *ngIf="curs.modulo == '1'">1</td>
+          <td *ngIf="curs.modulo == '2'">2</td>
+          <td *ngIf="curs.modulo == '2'">3</td>
           <td>{{ curs.docente }}</td>
           <td>{{ curs.hora_inicio }}</td>
           <td>{{ curs.hora_inicio }}</td>

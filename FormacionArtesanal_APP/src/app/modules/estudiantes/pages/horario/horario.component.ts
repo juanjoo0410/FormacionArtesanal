@@ -18,13 +18,9 @@ export class HorarioComponent {
   ) {}
 
   async ngOnInit() {
-    
     await this.consumidor.consumirEstudiante();
-
     await this.consumidor.consumirHorario();
-
     await this.consumidor.consumirCurso();
-
     this.curso = this.dataCurso.getCursos();
     
   }

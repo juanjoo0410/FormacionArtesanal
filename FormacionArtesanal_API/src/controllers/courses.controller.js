@@ -4,7 +4,7 @@ export const getCourses = async (req, res) => {
 	try {
 		const connection = await getConnection();
 		const { curso } = req.params;
-		const query = `SELECT cursos_formados.id, materias.nombre AS materia, cursos.nombre AS curso, hora_inicio, docentes.nombres AS docente
+		const query = `SELECT cursos_formados.id, cursos.nombre AS curso, materias.nombre AS materia, docentes.nombres AS docente, materias.modulo AS modulo, hora_inicio, 
 		FROM cursos_formados
 		INNER JOIN materias ON cursos_formados.materia_id = materias.id
 		INNER JOIN cursos ON cursos_formados.curso_id = cursos.id
