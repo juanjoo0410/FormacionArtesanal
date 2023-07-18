@@ -33,7 +33,7 @@ CREATE TABLE `becas` (
   `estado` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `ciclo_id` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,6 +42,7 @@ CREATE TABLE `becas` (
 
 LOCK TABLES `becas` WRITE;
 /*!40000 ALTER TABLE `becas` DISABLE KEYS */;
+INSERT INTO `becas` VALUES (1,1,10.00,0.00,1,'1',1);
 /*!40000 ALTER TABLE `becas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -57,7 +58,7 @@ CREATE TABLE `calificaciones` (
   `estudiante_id` int NOT NULL,
   `calificacion_total` decimal(10,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,6 +67,7 @@ CREATE TABLE `calificaciones` (
 
 LOCK TABLES `calificaciones` WRITE;
 /*!40000 ALTER TABLE `calificaciones` DISABLE KEYS */;
+INSERT INTO `calificaciones` VALUES (1,1,9.50);
 /*!40000 ALTER TABLE `calificaciones` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -81,7 +83,7 @@ CREATE TABLE `ciclo` (
   `nombre` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `estado` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -90,6 +92,7 @@ CREATE TABLE `ciclo` (
 
 LOCK TABLES `ciclo` WRITE;
 /*!40000 ALTER TABLE `ciclo` DISABLE KEYS */;
+INSERT INTO `ciclo` VALUES (1,'2023-2024','1');
 /*!40000 ALTER TABLE `ciclo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -155,7 +158,7 @@ CREATE TABLE `cursos` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(75) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -164,6 +167,7 @@ CREATE TABLE `cursos` (
 
 LOCK TABLES `cursos` WRITE;
 /*!40000 ALTER TABLE `cursos` DISABLE KEYS */;
+INSERT INTO `cursos` VALUES (1,'MOD-01-01'),(2,'MOD-01-02'),(3,'MOD-01-03');
 /*!40000 ALTER TABLE `cursos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -178,12 +182,12 @@ CREATE TABLE `cursos_formados` (
   `id` int NOT NULL AUTO_INCREMENT,
   `materia_id` int NOT NULL,
   `curso_id` int NOT NULL,
-  `hora_inicio` datetime NOT NULL,
+  `hora_inicio` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL,
   `cupo` int NOT NULL,
   `docente_id` int NOT NULL,
   `docente_evaluacion` decimal(10,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -192,6 +196,7 @@ CREATE TABLE `cursos_formados` (
 
 LOCK TABLES `cursos_formados` WRITE;
 /*!40000 ALTER TABLE `cursos_formados` DISABLE KEYS */;
+INSERT INTO `cursos_formados` VALUES (1,1,1,'08:00',40,1,8.00),(2,2,1,'09:00',40,1,9.00),(3,3,1,'10:00',40,1,8.00),(4,4,1,'11:00',40,1,10.00),(5,5,1,'12:00',40,1,10.00);
 /*!40000 ALTER TABLE `cursos_formados` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -216,7 +221,7 @@ CREATE TABLE `docentes` (
   `rol_id` int NOT NULL,
   `nivel_educativo_id` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -225,6 +230,7 @@ CREATE TABLE `docentes` (
 
 LOCK TABLES `docentes` WRITE;
 /*!40000 ALTER TABLE `docentes` DISABLE KEYS */;
+INSERT INTO `docentes` VALUES (1,'1201234240','Julio','Cervantes',52,'-','prueba1@example.com','0993524258','12345',10.00,2,0);
 /*!40000 ALTER TABLE `docentes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -308,7 +314,7 @@ CREATE TABLE `horarios_formados` (
   `evaluacion_docente` decimal(10,2) NOT NULL,
   `estado_evaluacion` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -317,6 +323,7 @@ CREATE TABLE `horarios_formados` (
 
 LOCK TABLES `horarios_formados` WRITE;
 /*!40000 ALTER TABLE `horarios_formados` DISABLE KEYS */;
+INSERT INTO `horarios_formados` VALUES (1,1,1,9.50,100.00,10,2,8.00,'ok');
 /*!40000 ALTER TABLE `horarios_formados` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -332,7 +339,7 @@ CREATE TABLE `item_matriculacion` (
   `matriculacion_id` int NOT NULL,
   `curso_formado_id` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -341,6 +348,7 @@ CREATE TABLE `item_matriculacion` (
 
 LOCK TABLES `item_matriculacion` WRITE;
 /*!40000 ALTER TABLE `item_matriculacion` DISABLE KEYS */;
+INSERT INTO `item_matriculacion` VALUES (1,1,1);
 /*!40000 ALTER TABLE `item_matriculacion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -356,7 +364,7 @@ CREATE TABLE `materias` (
   `nombre` varchar(75) COLLATE utf8mb4_unicode_ci NOT NULL,
   `modulo` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -365,6 +373,7 @@ CREATE TABLE `materias` (
 
 LOCK TABLES `materias` WRITE;
 /*!40000 ALTER TABLE `materias` DISABLE KEYS */;
+INSERT INTO `materias` VALUES (1,'Mantenimiento de Computadoras','1'),(2,'Robotica','1'),(3,'Desarrollo Web','1'),(4,'Ingles','1'),(5,'Cableado Estruturado','1'),(6,'Base de Datos','2'),(7,'Bigdata','2'),(8,'Machine Learning','2'),(9,'Finanzas Basicas','2'),(10,'Derecho Laboral','2'),(11,'Arquitectura de Computadoras','3'),(12,'Programación','3'),(13,'Sistemas Operativos','3'),(14,'Estadisticas','3'),(15,'Analitica de Datos','3');
 /*!40000 ALTER TABLE `materias` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -381,7 +390,7 @@ CREATE TABLE `matriculacion` (
   `fecha_matricula` datetime NOT NULL,
   `ciclo_id` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -390,6 +399,7 @@ CREATE TABLE `matriculacion` (
 
 LOCK TABLES `matriculacion` WRITE;
 /*!40000 ALTER TABLE `matriculacion` DISABLE KEYS */;
+INSERT INTO `matriculacion` VALUES (1,1,'2023-07-14 11:00:00',1);
 /*!40000 ALTER TABLE `matriculacion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -532,7 +542,7 @@ CREATE TABLE `tareas` (
   `fecha_fin` datetime NOT NULL,
   `tipo_tarea_id` int NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -541,6 +551,7 @@ CREATE TABLE `tareas` (
 
 LOCK TABLES `tareas` WRITE;
 /*!40000 ALTER TABLE `tareas` DISABLE KEYS */;
+INSERT INTO `tareas` VALUES (1,1,'Que es el CPU','Investigar todo lo relacionado al CPU','2023-07-14 00:00:00','2023-07-20 00:00:00',1);
 /*!40000 ALTER TABLE `tareas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -556,7 +567,7 @@ CREATE TABLE `tipo_becas` (
   `promedio` decimal(10,2) NOT NULL,
   `descuento` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -565,6 +576,7 @@ CREATE TABLE `tipo_becas` (
 
 LOCK TABLES `tipo_becas` WRITE;
 /*!40000 ALTER TABLE `tipo_becas` DISABLE KEYS */;
+INSERT INTO `tipo_becas` VALUES (1,10.00,30),(2,9.50,20),(3,9.00,10);
 /*!40000 ALTER TABLE `tipo_becas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -579,7 +591,7 @@ CREATE TABLE `tipo_tarea` (
   `id` int NOT NULL AUTO_INCREMENT,
   `tipo` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -588,6 +600,7 @@ CREATE TABLE `tipo_tarea` (
 
 LOCK TABLES `tipo_tarea` WRITE;
 /*!40000 ALTER TABLE `tipo_tarea` DISABLE KEYS */;
+INSERT INTO `tipo_tarea` VALUES (1,'Invetigacion'),(2,'Practico'),(3,'Foro');
 /*!40000 ALTER TABLE `tipo_tarea` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -600,4 +613,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-07-09 23:38:05
+-- Dump completed on 2023-07-18  0:17:01
