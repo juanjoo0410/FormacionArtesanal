@@ -23,6 +23,8 @@
     position: relative;
 }
 
+
+
 .contenido-encabezado {
     display: flex;
     flex-direction: column;
@@ -161,7 +163,7 @@
 
 /* MODULOS */
 .modulos {
-    background-color: lightgray;
+    background-color: lightblue;
     padding: 20px;
     display: flex;
     flex-direction: column;
