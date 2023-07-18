@@ -45,7 +45,7 @@ export class HeaderComponent {
   }
 
   openLogin(): void {
-    this.dialog.open(LoginComponent, {disableClose: false, width: '500px'});
+    this.dialog.open(LoginComponent, {disableClose: false, width: '400px'});
   }
 
   openRegistro(): void {

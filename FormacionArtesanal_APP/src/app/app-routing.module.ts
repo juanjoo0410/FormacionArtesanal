@@ -5,34 +5,17 @@ import { StudentsComponent } from './core/pages/students/students.component';
 import { TeachersComponent } from './core/pages/teachers/teachers.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomeComponent
-  },
-  {
-    path: 'inicio',
-    component: HomeComponent
-  },
-  {
-    path: 'estudiantes',
-    component: StudentsComponent
-  },
-  {
-    path: 'profesores',
-    component: TeachersComponent
-  },
-  {
-    path: 'estudiante',
+  {path: '', component: HomeComponent},
+  {path: 'inicio', component: HomeComponent},
+  {path: 'estudiantes', component: StudentsComponent},
+  {path: 'profesores', component: TeachersComponent},
+  {path: 'estudiante',
     loadChildren: () => import('./modules/estudiantes/estudiantes-routing.module').then((m) => m.EstudiantesRoutingModule),
   },
-  {
-    path: 'profesor',
+  {path: 'profesor',
     loadChildren: () => import('./modules/profesores/profesores-routing.module').then((m) => m.ProfesoresRoutingModule),
   },
-  {
-    path: '**', //PAG NO ENCONTRADA
-    component: HomeComponent
-  }
+  {path: '**', component: HomeComponent}
 ];
 
 @NgModule({

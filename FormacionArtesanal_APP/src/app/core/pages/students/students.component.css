@@ -4,20 +4,20 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #0f1a2c;
-    color: white;
+    background-color: white;
+    color: black;
     box-shadow: 0 10px 20px -12px rgb(0 0 0 / 42%), 0 3px 20px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
 }
 
 .imagen-encabezado {
-    height: calc(100vh - 50px);
-    background-size: cover;
+    height: calc(80vh - 50px);
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-image: url(../../../../assets/img/estudiantes.jpeg);
     width: 100%;
-    opacity: 0.18;
+    opacity: 0.40;
     transition: opacity 2s ease-in-out;
     position: relative;
 }
@@ -30,7 +30,7 @@
     position: absolute;
     animation: bajar 1.5s ease-out;
     animation-fill-mode: forwards;
-    padding: 30px;
+    padding: 50px;
 }
 
 .contenido-encabezado h1 {
@@ -53,11 +53,11 @@
 }
 
 .contenido-encabezado p {
-    /* width: 90%; */
+    width: 80%;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 20px;
     font-size: 16pt;
-    color: white;
+    color: black;
 }
 
 .button {
@@ -67,23 +67,23 @@
     margin-top: 30px;
     padding: 15px 25px;
     background-color: transparent;
-    color: white;
-    border: 2px solid white;
+    color: black;
+    border: 2px solid black;
     font-size: 14pt;
     letter-spacing: 2px;
     cursor: pointer;
 }
 
 .button:hover {
-    background-color: white;
-    border: 2px solid white;
-    color: black;
+    background-color: black;
+    border: 2px solid black;
+    color: white;
     transition: 0.5s;
 }
 
 .button:not(hover) {
     background-color: transparent;
-    border: 2px solid white;
+    border: 2px solid black;
     transition: 0.5s;
 }
 
@@ -102,7 +102,7 @@
 /* FIN ENCABEZADO */
 
 .separador {
-    height: 100px;
+    height: 30px;
 }
 
 /* COMENTARIOS */
