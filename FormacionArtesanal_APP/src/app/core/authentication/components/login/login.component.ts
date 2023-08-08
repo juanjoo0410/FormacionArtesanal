@@ -33,14 +33,12 @@ export class LoginComponent {
   ) {
     this.formLogin = new FormGroup({
       cedula: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]),
-      password: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)])
+      password: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(20)])
     });
   }
 
   hide = true;
   active = false;
-
-  
 
   onSubmit() {
     const credenciales = {
@@ -50,51 +48,32 @@ export class LoginComponent {
     const credencialesJson = JSON.stringify(credenciales)
     this.loginService.getCredentials(credencialesJson).toPromise()
       .then(data => {
-        
         console.log(data);
-        
         if (Array.isArray(data) && data.length > 0) {
           const usuario: Usuario = data[0];
           this.dataUsuario.setUsuario(usuario);
         }
-
         let rol = this.dataUsuario.getRol();
-        
         if (rol === 1) {
-
           console.log("Estudiante");
           this.buscarEstudiante();
-
         } else if (rol === 2) {
-
           console.log("Docente");
           this.buscarDocente();
-
         } else {
-
           console.log("Admin");
-          
         }
-
         this.dialogRef.close();
         window.open('/inicio', '_self');
-
         if (rol === 1) {
-
           this.router.navigate(['/estudiante/inicio']);
-
         } else if (rol === 2) {
-
           this.router.navigate(['/profesor/inicio']);
-
         }
-
       }).catch(
         error => {
-
-          this.messageError = error.error.message;
+          this.messageError = error.message;
           this.snackbar.open(this.messageError, 'OK', { duration: 3000 });
-
         });
   }
 
@@ -106,17 +85,13 @@ export class LoginComponent {
     let id = this.dataUsuario.getID();
     this.dataEstudiante.getEstudianteAPI(id).toPromise()
       .then(data => {
-
         if (Array.isArray(data) && data.length > 0) {
           const estudiante: Estudiante = data[0];
           this.dataEstudiante.setEstudiante(estudiante);
           this.loginService.logueado(1);
         }
-
       }).catch(error => {
-
         console.log(error.error.message);
-
       });
   }
 
@@ -124,18 +99,13 @@ export class LoginComponent {
     let id = this.dataUsuario.getID();
     this.dataDocente.getDocenteAPI(id).toPromise()
       .then(data => {
-
         if (Array.isArray(data) && data.length > 0) {
           const docente: Docente = data[0];
           this.dataDocente.setDocente(docente);
           this.loginService.logueado(2);
         }
-
       }).catch(error => {
-
         console.log(error.error.message);
-
       });
   }
-
 }

@@ -33,24 +33,16 @@ export class LoginService {
   }
 
   logueado(rol_id: number) {
-
     let user: any;
-
     if (rol_id === 1) {
-      
       user = this.dataEstudiante.getEstudiante();
-
     } else if (rol_id === 2) {
-      
       user = this.dataDocente.getDocente();
-    
     }
-
     this.cookie.set('active', 'true');
     this.cookie.set('usuario', user.nombres + ' ' + user.apellidos);
     this.cookie.set('id', user.id.toString());
     this.cookie.set('rol', user.rol_id.toString());
-
   }
 
   logOut() {
@@ -58,7 +50,6 @@ export class LoginService {
     this.cookie.set('usuario', '');
     this.cookie.set('id', '');
     this.cookie.set('rol', '');
-
     window.open('/inicio', '_self');
   }
 
@@ -77,5 +68,4 @@ export class LoginService {
   getRolUserLogged(): number {
     return Number(this.cookie.get('rol'));
   }
-
 }
